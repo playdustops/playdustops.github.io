@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dust Ops — download</title>
+<meta name="description" content="Dust Ops: CS-style 5v5 bomb defusal and deathmatch, vs bots or with friends over LAN. Windows and macOS.">
+<style>
+  :root {
+    --bg: #15171a;
+    --panel: #1d2024;
+    --line: #2c3036;
+    --text: #e8e6e1;
+    --muted: #a3a6ab;
+    --accent: #f2bf59;
+    --accent-ink: #1a1408;
+    --t: #f0b24c;
+    --ct: #7fb0ff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --line: #e2ded5;
+      --text: #1d1f22;
+      --muted: #5f6368;
+      --accent: #c98a12;
+      --accent-ink: #ffffff;
+      --t: #b9790f;
+      --ct: #2f68c4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 48px 0 24px; }
+  h1 {
+    margin: 0;
+    font-size: clamp(40px, 9vw, 72px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+  }
+  .tag { margin: 12px 0 0; color: var(--muted); font-size: 18px; }
+  .tag b.t { color: var(--t); font-weight: 600; }
+  .tag b.ct { color: var(--ct); font-weight: 600; }
+
+  .download {
+    margin: 28px 0 8px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .version { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .version strong { color: var(--text); font-size: 17px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    flex: 1 1 240px;
+    display: block;
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 650;
+    font-size: 17px;
+  }
+  .btn small { display: block; font-weight: 450; opacity: 0.8; font-size: 13px; }
+  .btn.alt { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn:hover { filter: brightness(1.07); }
+  .btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+  .note { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+  .note a { color: inherit; }
+
+  figure { margin: 24px 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+  section { margin: 36px 0; }
+  h2 { font-size: 22px; margin: 0 0 12px; }
+  h3 { font-size: 17px; margin: 18px 0 6px; }
+  p, li { color: var(--text); }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  code {
+    font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 5px;
+    overflow-wrap: anywhere;
+  }
+  #notes { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 20px 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 28px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { white-space: nowrap; color: var(--muted); width: 1%; }
+  footer { margin: 48px 0 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>DUST OPS</h1>
+    <p class="tag">CS-style 5v5 bomb defusal and deathmatch on a desert camp: <b class="t">Terrorists</b> vs <b class="ct">Counter-Terrorists</b>, against bots or with friends over LAN.</p>
+  </header>
+
+  <div class="download" id="download">
+    <p class="version" id="version">Looking up the latest build…</p>
+    <div class="buttons">
+      <a class="btn" id="dl-win" href="https://github.com/AleksandrKuzmenko/dust-ops-releases/releases/latest" aria-disabled="true">Download for Windows<small>64-bit, Windows 10/11</small></a>
+      <a class="btn alt" id="dl-mac" href="https://github.com/AleksandrKuzmenko/dust-ops-releases/releases/latest" aria-disabled="true">Download for macOS<small>Apple Silicon and Intel, macOS 11+</small></a>
+    </div>
+    <p class="note">Everyone in a LAN game needs the same version. <a href="https://github.com/AleksandrKuzmenko/dust-ops-releases/releases">All releases</a></p>
+  </div>
+
+  <figure>
+    <img src="shot-canteen.jpg" width="1320" height="690" alt="First-person view with a rifle inside a large canteen dining hall full of tables and chairs">
+    <figcaption>Most buildings on the map can be entered: offices on two floors, canteens, the laundry, accommodation blocks.</figcaption>
+  </figure>
+
+  <section>
+    <h2>What's new</h2>
+    <div id="notes"><p class="note">Release notes load with the latest build.</p></div>
+  </section>
+
+  <section>
+    <h2>Install</h2>
+    <div class="grid">
+      <div>
+        <h3>Windows</h3>
+        <ul>
+          <li>Unzip and run <code>DustOps.exe</code>.</li>
+          <li>The first time you host or join a LAN game, Windows asks about the firewall: tick <em>Private networks</em> and allow.</li>
+          <li>If SmartScreen says "Windows protected your PC": <em>More info → Run anyway</em> (the game isn't code-signed).</li>
+        </ul>
+      </div>
+      <div>
+        <h3>macOS</h3>
+        <ul>
+          <li>Unzip and drag <code>Dust Ops.app</code> to Applications.</li>
+          <li>Right-click it → <em>Open</em> → <em>Open</em> (needed once: the app isn't notarized).</li>
+          <li>Still refused? In Terminal: <code>xattr -dr com.apple.quarantine "/Applications/Dust Ops.app"</code></li>
+          <li>Allow incoming connections when asked, so LAN games work.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Playing together</h2>
+    <p>One player clicks <em>Host LAN game</em>, the others <em>Join LAN game</em>: the game shows up in the list, or type the host's IP. It uses UDP ports 7777 (game) and 7778 (discovery). Windows and Mac players can play together. The host picks bomb defusal or deathmatch in the lobby and can fill empty slots with bots.</p>
+    <p>Slow laptop? Main menu → <em>Graphics: Lowest</em> or <em>Low</em>.</p>
+  </section>
+
+  <section>
+    <h2>Controls</h2>
+    <table>
+      <tr><td>WASD</td><td>move · Shift walk (silent) · Ctrl crouch · Space jump</td></tr>
+      <tr><td>Mouse</td><td>fire · right button scopes the sniper rifle, lobs grenades</td></tr>
+      <tr><td>1 2 3 Q, wheel</td><td>primary, pistol, knife, last weapon</td></tr>
+      <tr><td>4 / 5</td><td>grenades / the C4 (if you carry it)</td></tr>
+      <tr><td>R · G · E</td><td>reload · drop gun · doors, plant / defuse, pick up a gun</td></tr>
+      <tr><td>B · M · Tab</td><td>buy menu · change team · scores</td></tr>
+      <tr><td>Esc · F11</td><td>menu and settings · fullscreen</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p><strong>Credits.</strong> Soldier: "Character (Type Tactical Man 1)" by LokitoBlu, CC BY 4.0, animated with Mixamo.
+    AK-47: "AK-47" by Lokeig, CC BY-NC 4.0 (non-commercial use only).
+    Other guns and C4: "Guns &amp; Explosives" by 3DModelsCC0, CC0.
+    Gunshots: The Free Firearm Sound Library (Jaszczak, Nelson, Heras, Nanney), CC0.
+    Footsteps and impacts: Kenney "Impact Sounds", CC0.
+    Foley, explosions, ambience: BigSoundBank (Joseph Sardin) and OpenGameArt contributors, CC0.
+    Ground texture: ambientCG "Ground031", CC0. Made with Godot 4.7 (MIT).</p>
+    <p>Free, non-commercial game.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var REPO = "AleksandrKuzmenko/dust-ops-releases";
+  var versionEl = document.getElementById("version");
+
+  function mb(bytes) { return Math.round(bytes / 1048576) + " MB"; }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // Release notes are short Markdown: "- " bullets, "### " headings, **bold**, `code`, plain paragraphs.
+  function renderNotes(md) {
+    var out = [], list = false;
+    md.replace(/\r/g, "").split("\n").forEach(function (raw) {
+      var line = raw.trim();
+      var inline = function (s) {
+        return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/`(.+?)`/g, "<code>$1</code>");
+      };
+      if (/^[-*] /.test(line)) {
+        if (!list) { out.push("<ul>"); list = true; }
+        out.push("<li>" + inline(line.slice(2)) + "</li>");
+        return;
+      }
+      if (list) { out.push("</ul>"); list = false; }
+      if (!line) return;
+      var h = line.match(/^#{1,4} (.*)/);
+      out.push(h ? "<h3>" + inline(h[1]) + "</h3>" : "<p>" + inline(line) + "</p>");
+    });
+    if (list) out.push("</ul>");
+    return out.join("");
+  }
+
+  function setButton(id, asset, label) {
+    var a = document.getElementById(id);
+    if (!asset) return;
+    a.href = asset.browser_download_url;
+    a.removeAttribute("aria-disabled");
+    a.firstChild.nodeValue = label;
+    a.querySelector("small").textContent += " · " + mb(asset.size);
+  }
+
+  function enableFallback() {
+    ["dl-win", "dl-mac"].forEach(function (id) { document.getElementById(id).removeAttribute("aria-disabled"); });
+  }
+
+  fetch("https://api.github.com/repos/" + REPO + "/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rel) {
+      var win = null, mac = null;
+      (rel.assets || []).forEach(function (a) {
+        if (/windows/i.test(a.name)) win = a;
+        else if (/mac/i.test(a.name)) mac = a;
+      });
+      var date = new Date(rel.published_at).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+      versionEl.innerHTML = "Latest build: <strong>" + escapeHtml(rel.tag_name) + "</strong> · " + escapeHtml(date);
+      setButton("dl-win", win, "Download for Windows");
+      setButton("dl-mac", mac, "Download for macOS");
+      if (!win || !mac) enableFallback();
+      if (rel.body) document.getElementById("notes").innerHTML = renderNotes(rel.body);
+    })
+    .catch(function () {
+      versionEl.textContent = "Couldn't look up the latest build here. The buttons open the releases page instead.";
+      enableFallback();
+    });
+})();
+</script>
+</body>
+</html>
